@@ -51,7 +51,7 @@ export default function App() {
     // Add more game objects here
   ];
 
-  const generateSemiFinalsGame = (id, homeIndex, visitorIndex) => {
+  const round2 = (id, homeIndex, visitorIndex) => {
     const homeGame = games[homeIndex];
     const visitorGame = games[visitorIndex];
 
@@ -94,20 +94,20 @@ export default function App() {
     };
   };
 
-  const semiFinalsGames = [
-    generateSemiFinalsGame("1", 0, 1),
-    generateSemiFinalsGame("2", 2, 3),
-    generateSemiFinalsGame("3", 4, 5),
-    generateSemiFinalsGame("4", 6, 7),
-    generateSemiFinalsGame("5", 8, 9),
-    generateSemiFinalsGame("6", 10, 11),
-    generateSemiFinalsGame("7", 12, 13),
-    generateSemiFinalsGame("8", 14, 15),
+  const quaterFinal = [
+    round2("1", 0, 1),
+    round2("2", 2, 3),
+    round2("3", 4, 5),
+    round2("4", 6, 7),
+    round2("5", 8, 9),
+    round2("6", 10, 11),
+    round2("7", 12, 13),
+    round2("8", 14, 15),
   ];
 
-  const generateFinalsGame = (id, homeIndex, visitorIndex) => {
-    const homeGame = semiFinalsGames[homeIndex];
-    const visitorGame = semiFinalsGames[visitorIndex];
+  const round3 = (id, homeIndex, visitorIndex) => {
+    const homeGame = quaterFinal[homeIndex];
+    const visitorGame = quaterFinal[visitorIndex];
 
     return {
       id: id,
@@ -148,16 +148,16 @@ export default function App() {
     };
   };
 
-  const FinalsGames = [
-    generateFinalsGame("1", 0, 1),
-    generateFinalsGame("2", 2, 3),
-    generateFinalsGame("3", 4, 5),
-    generateFinalsGame("4", 6, 7),
+  const semiFinal = [
+    round3("1", 0, 1),
+    round3("2", 2, 3),
+    round3("3", 4, 5),
+    round3("4", 6, 7),
   ];
 
-  const generateEndGame = (id, homeIndex, visitorIndex) => {
-    const homeGame = FinalsGames[homeIndex];
-    const visitorGame = FinalsGames[visitorIndex];
+  const round4 = (id, homeIndex, visitorIndex) => {
+    const homeGame = semiFinal[homeIndex];
+    const visitorGame = semiFinal[visitorIndex];
 
     return {
       id: id,
@@ -198,7 +198,7 @@ export default function App() {
     };
   };
 
-  const finals = [generateEndGame("1", 0, 1), generateEndGame("2", 2, 3)];
+  const finals = [round4("1", 0, 1), round4("2", 2, 3)];
 
   const generateFinalGame = (id, homeIndex, visitorIndex) => {
     const homeGame = finals[homeIndex];
